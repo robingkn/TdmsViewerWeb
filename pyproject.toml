@@ -1,0 +1,12 @@
+[project]
+name = "tdmsviewerweb"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "streamlit",
+    "nptdms",
+    "plotly",
+    "pandas",
+]
+
