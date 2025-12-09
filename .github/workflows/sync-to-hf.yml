@@ -1,0 +1,17 @@
+    name: Sync to Hugging Face Spaces
+
+    on:
+      push:
+        branches:
+          - master # Or your main branch name
+
+    jobs:
+      sync:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+          - name: Push to Hugging Face Space
+            uses: JacobLinCool/huggingface-sync@v1
+            with:
+              hf_token: ${{ secrets.HF_TOKEN }}
+              hf_repo_id: robingkn/tdms_viewer # Replace with your HF username and Space name
