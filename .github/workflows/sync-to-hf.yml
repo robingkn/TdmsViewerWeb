@@ -13,5 +13,7 @@
           - name: Push to Hugging Face Space
             uses: JacobLinCool/huggingface-sync@v1
             with:
-              hf_token: ${{ secrets.HF_TOKEN }}
-              hf_repo_id: robingkn/tdms_viewer # Replace with your HF username and Space name
+              token: ${{ secrets.HF_TOKEN }}                 # REQUIRED
+              space: robingkn/tdms_viewer                    # YOUR SPACE ID
+              sdk: streamlit                                 # IMPORTANT for Streamlit apps
+              app_file: src/tdms_viewer/app.py               # The entrypoint
