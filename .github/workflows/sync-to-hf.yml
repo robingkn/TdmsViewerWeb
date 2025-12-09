@@ -1,0 +1,19 @@
+    name: Sync to Hugging Face Spaces
+
+    on:
+      push:
+        branches:
+          - master # Or your main branch name
+
+    jobs:
+      sync:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+          - name: Push to Hugging Face Space
+            uses: JacobLinCool/huggingface-sync@v1
+            with:
+              token: ${{ secrets.HF_TOKEN }}                 # REQUIRED
+              space: robingkn/tdms_viewer                    # YOUR SPACE ID
+              sdk: streamlit                                 # IMPORTANT for Streamlit apps
+              app_file: src/tdms_viewer/app.py               # The entrypoint
